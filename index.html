@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0ada49df5d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <header>
+        <h2 id="appHeader">Music Player</h2>
+        <!-- Toggle Button -->
+        <div id="toggleButton">
+            <span style="margin-left: 5px">Light</span>
+            <label class="switch">
+                <input type="checkbox" id="toggleCheckbox">
+                <span class="slider round" style="text-align: left; font-size: 15px;"></span>
+            </label>
+            <span style="margin-right: 5px">Dark</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" id="songs">
+            <div id="songFilter">
+
+                <p id="filterTag">Filter By Genre: </p>
+                <form id="selectGenreForm" action="">
+                    <select class="pointer" id="selectGenre">
+                    <!-- <option> </option> -->
+                    </select>
+                </form>
+                <div id="searchSong">
+                    <input type="text" class="hidden" id="searchBarSong" placeholder="Search a song...">
+                    <i id="songSearchIcon" class="fa-solid fa-magnifying-glass pointer"></i>
+                    <i id="resetSongSectionIcon" class="fa-regular fa-circle-xmark pointer"></i>
+                </div>
+
+            </div>
+
+            <div class="card" id="songsCard">
+                <p class="cardHeader">All Songs</p>
+                <div class="cardContent">
+                    <!-- will be buttons inside the cardContent -->
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container" id="currentSong">
+            <div class="songImgLabel">
+                <div id="songImg">
+                    <img src="./resources/images/All_We_Know.png" alt="CurrentSongImg" id="img">
+                </div>
+                <div id="songDetail">
+                    <span id="songName">Song Name</span>
+                    <span id="artist">Artist</span>
+                </div>
+            </div>
+            <div id="audioControlDiv">
+                <!-- Audio Tag -->
+                <audio src="" id="audioControl" controls></audio>
+            </div>
+
+            <div id="songNavButtons">
+                <button class="navButtons pointer" id="prevButton"><i class="fa-solid fa-backward-step"></i></button>
+                <button class="navButtons pointer" id="nextButton"><i class="fa-solid fa-forward-step"></i></button>
+                <button class="navButtons pointer" id="addSongToPlaylist">
+
+                    <span style="text-align: center;" id="addPlaylistIcons"><i class="fa-solid fa-plus"></i>
+                        <i style="margin-left: -5px;" class="fa-solid fa-list"></i>
+                    </span>
+                    <!-- <span style="margin-left: -5px;"></span> -->
+                    <select id="playlistOptionsToAdd">
+
+                    </select>
+
+                </button>
+            </div>
+        </div>
+        <div class="container" id="playlist">
+            <div id="playlistAction">
+                <div id="addPlaylist">
+                    <i class="fa-solid fa-plus pointer"></i>
+                </div>
+                <div id="inputBarDiv">
+                    <i id="inputPlusIcon" class="fa-solid fa-plus"></i>
+                    <input type="text" id="inputBar" placeholder="Type Here...">
+                    <i id="inputSearchIcon" class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="searchPlaylist">
+                    <i id="searchPlaylistIcon" class="fa-solid fa-magnifying-glass pointer"></i>
+                    <i id="clearPlaylistSearchResult" class="fa-regular fa-circle-xmark pointer"></i>
+                </div>
+            </div>
+
+            <div class="card" id="currentPlaylist">
+                <p class="cardHeader"></p>
+                <div class="cardContent" id="currentPlaylistContent">
+                    <!-- will be buttons inside the cardContent -->
+                </div>
+            </div>
+
+            <div class="card" id="playlistCard">
+                <p class="cardHeader"></p>
+                <div class="cardContent" id="playlistCardContent">
+                    <!-- will be buttons inside the cardContent -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="toggle.js"></script>
+    <script src="./classes.js"></script>
+    <script src="./global.js"></script>
+    <script src="./songsmodule.js"></script>
+    <script src="./songDisplayModule.js"></script>
+    <script src="./playlistSection.js"></script>
+</body>
+
+</html>

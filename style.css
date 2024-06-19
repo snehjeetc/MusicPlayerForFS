@@ -1,0 +1,452 @@
+[data-theme="light"]{
+    --body-bgcolor: whitesmoke;
+    --card-bgcolor: #d4e4fb;
+    --bg-color3: #bfd0e8;
+    --sliderColor: darkgrey;
+    --togglebgColor: rgba(62, 60, 60, 0.705);
+    --borderColor1: black;
+    --borderColor2: #3f79cc;
+    --fontColor1: black;
+    --fontColor2: white;
+    --btnfontColor: black;
+    --btnfontColor2: white;
+}
+
+[data-theme="dark"]{
+    --body-bgcolor: rgba(60,60,60,255);
+    --card-bgcolor: grey;
+    --bg-color3: darkgrey;
+    --sliderColor: #bfd0e8;
+    --togglebgColor: rgba(62, 60, 60, 0.705);
+    --borderColor1: darkgrey;
+    --borderColor2: #1f2020;
+    --fontColor1: white;
+    --fontColor2: black;
+    --btnfontColor: white;
+    --btnfontColor2: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Tag Styles Start */
+
+body {
+    background-color: var(--body-bgcolor);
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 85vh;
+    justify-content: space-evenly;
+}
+
+
+input {
+    background: transparent;
+}
+
+img {
+    width: auto;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    height: 10vh;
+}
+
+/* Tag Style ends */
+
+/* Toggle button Property starts */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--sliderColor);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--sliderColor);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--bg-color3);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+/* Toggle button property ends */
+
+/* Header Section styling starts */
+#appHeader {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: -70px;
+    width: 100%;
+    color: var(--fontColor1);
+}
+
+#toggleButton {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: baseline;
+    right: 10%;
+    border: 2px solid var(--borderColor1);
+    border-radius: 30px;
+    /* padding-left: 5px; */
+    padding-right: 5px;
+    background-color: var(--sliderColor);
+}
+
+#toggleButton>span {
+    display: inline-block;
+    text-align: center;
+    align-self: center;
+    color: var(--fontColor2);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#toggleButton * {
+    color: var(--fontColor1);
+}
+
+/* Header Styling ends */
+
+/* Container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 32%;
+    height: 100%;
+    border: 2px solid var(--borderColor1);
+    background-color: var(--bg-color3);
+    border-radius: 5%;
+}
+
+/* Songs Section styling*/
+#songs {
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+/* Songs section Action bar styles */
+/* song filter */
+#songFilter {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+#selectGenre {
+    height: fit-content;
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+#searchSong {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    align-self: center;
+}
+
+#searchBarSong {
+    border: 3px solid;
+    border-radius: 1rem;
+    border-color: var(--borderColor2);
+}
+
+/* Songs section Action bar styles end*/
+::placeholder {
+    color: var(--fontColor1);
+}
+
+button {
+    background-color: var(--body-bgcolor);
+}
+
+button * {
+    color: var(--btnfontColor);
+}
+
+/* card is a generic container for all the music and playlist items */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 10px solid;
+    border-radius: 1rem;
+    background-color: var(--card-bgcolor);
+    border-color: var(--borderColor2);
+}
+
+.cardHeader {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--fontColor1);
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    width: 100%;
+    height: 80%;
+}
+
+.cardContent button {
+    width: 30em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.card-cnt-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card-btn-content {
+    flex-grow: 1;
+}
+
+/* Card Content styling ends */
+
+#songsCard {
+    margin-top: 10px;
+    max-height: 85%;
+}
+
+
+/* Input bar in playlist sections meant for both Creation and Searching */
+#inputBarDiv {
+    position: relative;
+    width: 200px;
+    height: fit-content;
+    display: none;
+    padding: 5px;
+}
+
+#inputBarDiv>* {
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#inputBar {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+}
+
+/* Display song sections */
+.songImgLabel {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 70%;
+    padding: 15px;
+    border: 10px solid;
+    border-radius: 1rem;
+    letter-spacing: 1px;
+    border-radius: 5%;
+    border-color: var(--borderColor2);
+    background-color: var(--card-bgcolor);
+}
+
+#songImg {
+    height: 80%;
+    width: 100%;
+}
+
+#songImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#songDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#songName {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#artist {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+#songNavButtons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.navButtons {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+    width: 8em;
+}
+
+
+#playlist {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+#playlistAction {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 20px;
+}
+
+#playlist>.card {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#currentPlaylist, #playlistCard{
+    max-height: 40%;
+}
+
+#playlistOptionsToAdd {
+    background: transparent;
+    border: 0px solid black;
+    position: relative;
+    right: 5%;
+    z-index: 1;
+    display: none;
+    width: 100%;
+}
+
+#prevButton,
+#nextButton {
+    display: none;
+}
+
+audio {
+    width: 330px;
+}
+
+#songFilter,
+#playlistAction,
+#inputBarDiv {
+    border: 5px solid;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--card-bgcolor);
+    border-color: var(--borderColor2);
+}
+
+select,
+#playlistOptionsToAdd {
+    /* background-color: var(--bg-lightcolor2); */
+    background-color: var(--card-bgcolor);
+    color: var(--fontColor1);
+}
+
+button:hover {
+    background-color: var(--borderColor2);
+    /* color: white; */
+    font-weight: bold;
+}
+
+button:hover * {
+    color: var(--btnfontColor2);
+}
+
+button:hover select {
+    color: var(--fontColor1);
+}
+
+select>option {
+    color: var(--fontColor1) !important;
+}
+
+button span:last-child{
+    cursor: pointer;
+}
+
+.pointer{ 
+    cursor: pointer;
+}
